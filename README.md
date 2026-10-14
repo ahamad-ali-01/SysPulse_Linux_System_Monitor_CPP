@@ -78,15 +78,19 @@ WSL2 reports the Linux environment visible to that distribution, not all Windows
 ## Architecture
 
 ```mermaid
+
 flowchart TD
-  CLI[CLI and watch loop] --> Mon[Monitoring modules]
-  Mon --> Proc[/proc process files]
-  Mon --> Cpu[/proc/stat]
-  Mon --> Mem[/proc/meminfo]
-  Mon --> Sys[/proc/uptime, loadavg, uname]
-  CLI --> Fmt[Terminal formatting]
-  CLI --> Exp[CSV / JSON exporter]
-  Exp --> Files[Local report files]
+    CLI["CLI and watch loop"] --> Mon["Monitoring modules"]
+
+    Mon --> Proc["Process monitor: /proc process files"]
+    Mon --> Cpu["CPU monitor: /proc/stat"]
+    Mon --> Mem["Memory monitor: /proc/meminfo"]
+    Mon --> Sys["System info: uptime, load average, uname"]
+
+    CLI --> Fmt["Terminal formatting"]
+    CLI --> Exp["CSV / JSON exporter"]
+    Exp --> Files["Local report files"]
+
 ```
 
 The process parser locates the first `(` and final `)` in `/proc/[pid]/stat` so process names containing spaces or parentheses are handled. The fields after the final parenthesis are tokenized, and disappearing or unreadable processes are skipped.
