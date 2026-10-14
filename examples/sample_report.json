@@ -1,0 +1,7 @@
+{
+  "timestamp": "example timestamp",
+  "system": {"hostname":"example-host","kernel":"Linux example","uptime_seconds":12345,"load_average":[0.10,0.20,0.15],"logical_cpus":4},
+  "cpu": {"total_percent":12.5,"cores":[{"name":"cpu0","percent":8.0}]},
+  "memory": {"total_kib":8000000,"available_kib":4000000,"free_kib":1000000,"used_kib":4000000,"percent":50.0,"swap_total_kib":2000000,"swap_free_kib":2000000},
+  "processes": []
+}

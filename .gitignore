@@ -1,0 +1,8 @@
+build/
+build-debug/
+*.csv
+*.json.tmp
+results/*
+!results/README.md
+*.o
+*.a

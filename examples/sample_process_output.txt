@@ -1,0 +1,2 @@
+PID     NAME                    STATE  CPU%      RSS         THREADS COMMAND
+1       systemd                 S      0.0       12.0 MiB    1       /sbin/init
