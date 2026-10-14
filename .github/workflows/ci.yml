@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-cmake@v3
+      - uses: kitware/setup-cmake@v3
+        with:
+          cmake-version: '3.27.3'   # optional: set the desired CMake version
       - name: Configure
         run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - name: Build
